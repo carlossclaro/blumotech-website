@@ -1,307 +1,175 @@
 <!DOCTYPE html>
-<html class="no-js" lang="zxx">
-
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>MyMedicalCard - Home</title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyMedicalCard — Medical ID & Health Profiles</title>
+  <meta name="description" content="MyMedicalCard keeps medications, conditions, and emergency contacts at your fingertips — even from your lock screen. Available on Google Play.">
 
-    <!-- ========================= CSS here ========================= -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/LineIcons.2.0.css" />
-    <link rel="stylesheet" href="assets/css/animate.css" />
-    <link rel="stylesheet" href="assets/css/tiny-slider.css" />
-    <link rel="stylesheet" href="assets/css/glightbox.min.css" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/blumotech.css">
+  <link rel="stylesheet" href="css/mmc.css">
 </head>
+<body class="page-mmc">
 
-<body>
-    <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/65baaa728d261e1b5f5a3554/1hlgijkg1';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
+  <script>
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = "https://embed.tawk.to/65baaa728d261e1b5f5a3554/1hlgijkg1";
+      s1.charset = "UTF-8";
+      s1.setAttribute("crossorigin", "*");
+      s0.parentNode.insertBefore(s1, s0);
     })();
-    </script>
-    <!--End of Tawk.to Script-->
-    <!--End of Tawk.to Script-->
-    <!--[if lte IE 9]>
-      <p class="browserupgrade">
-        You are using an <strong>outdated</strong> browser. Please
-        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
-        your experience and security.
-      </p>
-    <![endif]-->
+  </script>
 
-    <!-- Preloader -->
-    <div class="preloader">
-        <div class="preloader-inner">
-            <div class="preloader-icon">
-                <span></span>
-                <span></span>
-            </div>
-        </div>
+  <div class="ambient" aria-hidden="true">
+    <div class="ambient__orb ambient__orb--1"></div>
+    <div class="ambient__orb ambient__orb--2"></div>
+    <div class="ambient__grid"></div>
+  </div>
+
+  <header class="nav mmc-nav" id="nav">
+    <div class="nav__inner">
+      <a href="#top" class="nav__logo">
+        MyMedicalCard
+        <small>by Blumotech</small>
+      </a>
+      <nav class="nav__links" aria-label="Main">
+        <a href="#features" class="is-active">Features</a>
+        <a href="index.html">Blumotech</a>
+      </nav>
+      <div class="nav__end">
+        <a href="https://play.google.com/store/apps/details?id=com.blumotech.mymedicalcard" class="nav__cta nav__cta--desktop" target="_blank" rel="noopener noreferrer">Get on Google Play</a>
+        <button class="nav__toggle" id="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
-    <!-- /End Preloader -->
+    <nav class="nav__mobile" id="nav-mobile" aria-label="Mobile" hidden>
+      <a href="#features">Features</a>
+      <a href="index.html">Blumotech</a>
+      <a href="https://play.google.com/store/apps/details?id=com.blumotech.mymedicalcard" class="nav__cta" target="_blank" rel="noopener noreferrer">Get on Google Play</a>
+    </nav>
+  </header>
 
-    <!-- Start Header Area -->
-    <header class="header navbar-area">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-12">
-                    <div class="nav-inner">
-                        <!-- Start Navbar -->
-                        <nav class="navbar navbar-expand-lg">
-                            <a class="navbar-brand" href="index.html">
-                                <img src="assets/images/logo/white-logo.svg" alt="Logo">
-                            </a>
-                            <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="toggler-icon"></span>
-                                <span class="toggler-icon"></span>
-                                <span class="toggler-icon"></span>
-                            </button>
-                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
-                                <ul id="nav" class="navbar-nav ms-auto">
-                                    <li class="nav-item">
-                                        <a href="#home" class="page-scroll active"
-                                            aria-label="Toggle navigation">Home</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#features" class="page-scroll"
-                                            aria-label="Toggle navigation">Features</a>
-                                    </li>
-                                
-                                    <li class="nav-item">
-                                        <a class="dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse"
-                                            data-bs-target="#submenu-1-4" aria-controls="navbarSupportedContent"
-                                            aria-expanded="false" aria-label="Toggle navigation">Apps</a>
-                                        <ul class="sub-menu collapse" id="submenu-1-4">
-                                            <li class="nav-item"><a href="javascript:void(0)">[Coming soon] TimeToCelebrate</a>
-                                            </li>
-                                            <li class="nav-item"><a href="https://play.google.com/store/apps/details?id=com.blumotech.wesplit">WeSplit</a></li>
-                                            <li class="nav-item"><a href="https://play.google.com/store/apps/details?id=com.blumotech.holdmyreceipts">HoldMyReceipts</a></li>
+  <section class="hero mmc-hero" id="top">
+    <div class="container mmc-hero__content">
+      <div class="mmc-hero__copy reveal is-visible">
+        <div class="mmc-hero__badge">Android · Health & safety</div>
+        <h1 class="mmc-hero__title">
+          Peace of mind in<br>
+          <span class="gradient">your pocket</span>
+        </h1>
+        <p class="mmc-hero__desc">
+          Manage medical profiles for yourself and loved ones. Medications, conditions, blood type, and emergency contacts — ready when seconds matter.
+        </p>
+        <a href="https://play.google.com/store/apps/details?id=com.blumotech.mymedicalcard" class="mmc-play" target="_blank" rel="noopener noreferrer">
+          <img src="assets/images/hero/googlePlay.svg" alt="Get it on Google Play" width="180" height="52">
+        </a>
+      </div>
+      <div class="mmc-hero__visual reveal is-visible">
+        <img src="assets/images/hero/image_for_website_final1.png" alt="MyMedicalCard app on a phone" width="520" height="auto" loading="eager">
+      </div>
+    </div>
+  </section>
 
-                                        </ul>
-                                    </li>
-                                
+  <section class="section mmc-features" id="features">
+    <div class="container">
+      <header class="section__header section__header--center">
+        <span class="section__label">Features</span>
+        <h2 class="section__title">Built for real emergencies</h2>
+        <p class="section__lead">Everything first responders and caregivers need, organized and easy to update.</p>
+      </header>
 
-                                    <li class="nav-item">
-                                        <a href="#" class="page-scroll"
-                                            aria-label="Toggle navigation">[Coming soon] Usage Guide</a>
-                                    </li>
-                                </ul>
-                            </div> <!-- navbar collapse -->
-                            <!--<a href="https://play.google.com/store/apps/details?id=com.blumotech.mymedicalcard">
-                                
-                                <img src="assets/images/hero/googlePlay.svg"  alt="Google Play">
-                            </a>-->
-                        </nav>
-                        <!-- End Navbar -->
-                    </div>
-                </div>
-            </div> <!-- row -->
-        </div> <!-- container -->
-    </header>
-    <!-- End Header Area -->
+      <div class="mmc-features__grid">
+        <article class="mmc-feature">
+          <div class="mmc-feature__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg>
+          </div>
+          <h3>Medication reference</h3>
+          <p>List medications for quick reference during care or travel.</p>
+        </article>
+        <article class="mmc-feature">
+          <div class="mmc-feature__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <h3>Vital information</h3>
+          <p>Blood type, height, and weight for faster medical decisions.</p>
+        </article>
+        <article class="mmc-feature">
+          <div class="mmc-feature__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <h3>Medical ID integration</h3>
+          <p>Integrate key ID details for rapid identification.</p>
+        </article>
+        <article class="mmc-feature">
+          <div class="mmc-feature__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+          </div>
+          <h3>Health condition log</h3>
+          <p>Keep a clear record of ongoing medical conditions.</p>
+        </article>
+        <article class="mmc-feature">
+          <div class="mmc-feature__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <h3>Personal profiles</h3>
+          <p>Add a profile photo and manage multiple family members.</p>
+        </article>
+        <article class="mmc-feature">
+          <div class="mmc-feature__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <h3>Emergency contacts</h3>
+          <p>Store contacts for family or caregivers when crisis hits.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-    <!-- Start Hero Area -->
-    <section id="home" class="hero-area">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-5 col-md-12 col-12">
-                    <div class="hero-content">
-                        <h1 class="wow fadeInLeft" data-wow-delay=".4s">Experience peace with MyMedicalCard</h1>
-                        <p class="wow fadeInLeft" data-wow-delay=".6s">An app for your well-being. Manage medical profiles effortlessly for instant access to crucial information, 
-                            even from your lock screen.</p>
-                        <div class="wow fadeInLeft" data-wow-delay=".8s">
-                            <a href="https://play.google.com/store/apps/details?id=com.blumotech.mymedicalcard">
-                                <br></br>
-                                <img src="assets/images/hero/googlePlay.svg"  alt="Google Play">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-7 col-md-12 col-12">
-                    <div class="hero-image wow fadeInRight" data-wow-delay=".4s">
-                        <img src="assets/images/hero/image_for_website_final1.png" alt="#">
-                    </div>
-                </div>
-            </div>
+  <section class="mmc-cta">
+    <div class="container">
+      <h2>Download free on Google Play</h2>
+      <p>Start building your medical profile in minutes.</p>
+      <a href="https://play.google.com/store/apps/details?id=com.blumotech.mymedicalcard" class="mmc-play" target="_blank" rel="noopener noreferrer">
+        <img src="assets/images/hero/googlePlay.svg" alt="Get it on Google Play" width="180" height="52">
+      </a>
+    </div>
+  </section>
+
+  <footer class="mmc-footer">
+    <div class="container">
+      <div class="mmc-footer__grid">
+        <div>
+          <a href="#top" class="nav__logo">MyMedicalCard</a>
+          <p>Designed and developed by <a href="index.html">Blumotech</a>.</p>
         </div>
-    </section>
-    <!-- End Hero Area -->
-
-    <!-- Start Features Area -->
-    <section id="features" class="features section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-title">
-                        <h3 class="wow zoomIn" data-wow-delay=".2s">Key Features</h3>
-                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Your Experience Gets Better And Better Over Time.
-                        </h2>
-                        <!-- <p class="wow fadeInUp" data-wow-delay=".6s">There are many variations of passages of Lorem
-                            Ipsum available, but the majority have suffered alteration in some form.</p> -->
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Feature -->
-                    <div class="single-feature wow fadeInUp" data-wow-delay=".2s">
-                        <i class="lni lni-clipboard"></i>
-                        <h3>Medication Reference</h3>
-                        <p>Easily include your medications for quick reference.</p>
-                    </div>
-                    <!-- End Single Feature -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Feature -->
-                    <div class="single-feature wow fadeInUp" data-wow-delay=".4s">
-                        <i class="lni lni-information"></i>
-                        <h3>Vital Information</h3>
-                        <p>Record Blood Type, Height, and Weight for prompt medical interventions.</p>
-                    </div>
-                    <!-- End Single Feature -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Feature -->
-                    <div class="single-feature wow fadeInUp" data-wow-delay=".6s">
-                        <i class="lni lni-reload"></i>
-                        <h3>Medical ID Integration</h3>
-                        <p>Integrate medical ID details for rapid identification.</p>
-                    </div>
-                    <!-- End Single Feature -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Feature -->
-                    <div class="single-feature wow fadeInUp" data-wow-delay=".6s">
-                        <i class="lni lni-list"></i>
-                        <h3>Health Condition Log</h3>
-                        <p>Keep a comprehensive record of your medical conditions.</p>
-                    </div>
-                    <!-- End Single Feature -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Feature -->
-                    <div class="single-feature wow fadeInUp" data-wow-delay=".6s">
-                        <i class="lni lni-stamp"></i>
-                        <h3>Personalize Your Profile</h3>
-                        <p>Add your own profile picture for a personal touch.</p>
-                    </div>
-                    <!-- End Single Feature -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <!-- Start Single Feature -->
-                    <div class="single-feature wow fadeInUp" data-wow-delay=".6s">
-                        <i class="lni lni-notepad"></i>
-                        <h3>Emergency Contacts</h3>
-                        <p>Store essential contacts for swift crisis management.</p>
-                    </div>
-                    <!-- End Single Feature -->
-                </div>
-                
-            </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="mmc_toc.html">Terms & Conditions</a></li>
+            <li><a href="mmc_privacy_policy.html">Privacy Policy</a></li>
+          </ul>
         </div>
-    </section>
-    <!-- End Features Area -->
-
-
-    <!-- Start Footer Area -->
-    <footer class="footer">
-        <!-- Start Footer Top -->
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-md-4 col-12">
-                        <!-- Single Widget -->
-                        <div class="single-footer f-about">
-                            <div class="logo">
-                                <a href="index.html">
-                                    <img src="assets/images/logo/white-logo.svg" alt="#">
-                                </a>
-                            </div>
-                            <p>Making the world a better place through constructing elegant hierarchies.</p>
-                            <ul class="social">
-                                <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a></li>
-                                <li><a href="javascript:void(0)"><i class="lni lni-linkedin-original"></i></a></li>
-                            </ul>
-                            <p class="copyright-text" >© 2024 MyMedicalCard. All rights reserved.</p>
-                            <p class="copyright-text">Designed and developed by Blumotech.</p>
-                        </div>
-                        <!-- End Single Widget -->
-                    </div>
-                    <div class="col-lg-8 col-md-8 col-12">
-                        <div class="row">
-                            <div class="col-lg-3 col-md-6 col-12">
-                                <!-- Single Widget -->
-                                <div class="single-footer f-link">
-                                    <h3>Company</h3>
-                                    <ul>
-                                        <li><a href="https://blumotech.com">About Us</a></li>
-                                        <li><a href="https://blumotech.com">Contact Us</a></li>
-                                    </ul>
-                                </div>
-                                <!-- End Single Widget -->
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-12">
-                                <!-- Single Widget -->
-                                <div class="single-footer f-link">
-                                    <h3>Legal</h3>
-                                    <ul>
-                                        <li><a href="mmc_toc.html">Terms & Conditions</a></li>
-                                        <li><a href="mmc_privacy_policy.html">Privacy Policy</a></li>
-                                    </ul>
-                                </div>
-                                <!-- End Single Widget -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="index.html">Blumotech home</a></li>
+            <li><a href="index.html#contact">Contact Blumotech</a></li>
+          </ul>
         </div>
-        <!--/ End Footer Top -->
-    </footer>
-    <!--/ End Footer Area -->
+      </div>
+      <p class="mmc-footer__copy">&copy; <span id="year"></span> MyMedicalCard. All rights reserved.</p>
+    </div>
+  </footer>
 
-    <!-- ========================= scroll-top ========================= -->
-    <!-- <a href="#" class="scroll-top">
-        <i class="lni lni-chevron-up"></i>
-    </a>
--->
-
-    <!-- ========================= JS here ========================= -->
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/tiny-slider.js"></script>
-    <script src="assets/js/glightbox.min.js"></script>
-    <script src="assets/js/count-up.min.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script type="text/javascript">
-
-        //====== counter up 
-        var cu = new counterUp({
-            start: 0,
-            duration: 2000,
-            intvalues: true,
-            interval: 100,
-            append: " ",
-        });
-        cu.start();
-    </script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script src="js/blumotech.js"></script>
 </body>
-
 </html>
