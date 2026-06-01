@@ -476,7 +476,16 @@
           <div id="sendmessage" class="form-message form-message--success" role="status">Your message has been sent. Thank you!</div>
           <div id="errormessage" class="form-message form-message--error" role="alert"></div>
 
-          <form id="contact-form" class="contactForm" method="post" novalidate>
+          <form
+            id="contact-form"
+            class="contactForm"
+            action="https://formsubmit.co/sales@blumotech.com"
+            method="POST"
+            novalidate>
+            <input type="hidden" name="_subject" id="form-subject" value="Blumotech website inquiry">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" id="form-next" value="">
             <input type="text" name="_honey" class="form-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
             <div class="form-row">
               <div class="form-group">

@@ -169,6 +169,26 @@
   }
 
   if (contactForm) {
+    const formAction =
+      config.formSubmitAction || "https://formsubmit.co/sales@blumotech.com";
+    const formNext = document.getElementById("form-next");
+    const formSubject = document.getElementById("form-subject");
+    const thanksUrl =
+      window.location.origin +
+      window.location.pathname +
+      "?contact=sent#contact";
+
+    contactForm.setAttribute("action", formAction);
+    if (formNext) formNext.value = thanksUrl;
+
+  if (sendMessage && new URLSearchParams(window.location.search).get("contact") === "sent") {
+      sendMessage.textContent = "Your message has been sent. Thank you!";
+      sendMessage.classList.add("is-visible");
+      if (window.history.replaceState) {
+        window.history.replaceState(null, "", window.location.pathname + "#contact");
+      }
+    }
+
     contactForm.querySelectorAll("input, textarea").forEach(function (field) {
       field.addEventListener("blur", function () {
         validateField(field);
@@ -176,79 +196,34 @@
     });
 
     const submitBtn = contactForm.querySelector('button[type="submit"]');
-    const formEndpoint =
-      config.formSubmitEndpoint || "https://formsubmit.co/ajax/sales@blumotech.com";
-    const contactEmail = config.contactEmail || "sales@blumotech.com";
 
     contactForm.addEventListener("submit", function (e) {
-      e.preventDefault();
       let valid = true;
       contactForm.querySelectorAll("[data-rule]").forEach(function (field) {
         if (!validateField(field)) valid = false;
       });
-      if (!valid) return;
+      if (!valid) {
+        e.preventDefault();
+        return;
+      }
 
       const honey = contactForm.querySelector('[name="_honey"]');
-      if (honey && honey.value) return;
+      if (honey && honey.value) {
+        e.preventDefault();
+        return;
+      }
 
-      const data = new FormData(contactForm);
-      const payload = {
-        name: data.get("name"),
-        email: data.get("email"),
-        subject: data.get("subject") || "Blumotech website inquiry",
-        message: data.get("message"),
-        _subject: "Blumotech contact: " + (data.get("subject") || "New inquiry"),
-        _template: "table",
-        _captcha: "false",
-      };
+      const subjectInput = contactForm.querySelector('[name="subject"]');
+      if (formSubject && subjectInput) {
+        formSubject.value =
+          "Blumotech contact: " + (subjectInput.value.trim() || "New inquiry");
+      }
 
       if (submitBtn) {
         submitBtn.disabled = true;
         submitBtn.textContent = "Sending…";
       }
-      sendMessage.classList.remove("is-visible");
-      errorMessage.classList.remove("is-visible");
-
-      fetch(formEndpoint, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify(payload),
-      })
-        .then(function (res) {
-          return res.json().then(function (body) {
-            if (!res.ok) throw new Error(body.message || "Send failed");
-            return body;
-          });
-        })
-        .then(function () {
-          sendMessage.textContent = "Your message has been sent. Thank you!";
-          sendMessage.classList.add("is-visible");
-          contactForm.reset();
-        })
-        .catch(function () {
-          const mailSubject = encodeURIComponent(payload._subject);
-          const body = encodeURIComponent(
-            "Name: " + payload.name + "\nEmail: " + payload.email + "\n\n" + payload.message
-          );
-          errorMessage.innerHTML =
-            "Could not send automatically. <a href=\"mailto:" +
-            contactEmail +
-            "?subject=" +
-            mailSubject +
-            "&body=" +
-            body +
-            "\">Email us directly</a> or try again in a moment.";
-          errorMessage.classList.add("is-visible");
-        })
-        .finally(function () {
-          if (submitBtn) {
-            submitBtn.disabled = false;
-            submitBtn.textContent = "Send message";
-          }
-        });
+      /* Native POST to FormSubmit — no fetch, no CORS */
     });
   }
 
